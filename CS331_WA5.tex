@@ -1,0 +1,291 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage{graphicx}
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    \Large{\textbf{CS331 (Spring 2022): Introduction to Artificial Intelligence}}
+
+   \Large{\textbf{ Written Assignment \#5}}
+   
+   \vspace{3mm}
+   
+   Andrea Tongsak \\ tongsaka@oregonstate.edu
+\end{center}
+
+\vspace{5mm} 
+
+\noindent Date handed out: May 18, 2022 \\
+\noindent Date due: May 25, 2022, 10am, on Canvas\\
+\noindent Total: 25 points
+
+\vspace{5mm} 
+
+\noindent This assignment is to be done individually. Please hand in a pdf on Canvas. 
+
+\vspace{5mm} 
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% Problem 1
+%%%%%%%%%%%%%%%%%%%%
+
+\noindent 1.  Consider the game represented in normal form below. 
+
+
+\vspace{3mm}
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    & B: S1  & B: S2 & B: S3 \\
+    \hline
+    A: S1 & A = 5, B = 9 & A = 3, B = 6 & A = 1, B = -4 \\
+    \hline
+    A: S2 & A = 4, B = -4 &  A = 2, B = 2  & A = -1, B = 6 \\
+    \hline
+    A: S3  & A = 0, B = 0  & A = 2, B = -2  & A = 0, B = 0 \\
+    \hline
+    \end{tabular}
+\end{table*}
+\vspace{3mm}
+
+\noindent a)  Indicate all the pure strategy Nash equilibria in the matrix. \textbf{[2 points]}
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 1 a)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+My responses will be denoted (A's strategy, B's strategy).
+
+The pure strategy Nash equilibriums in the matrix are (S1,S1).
+
+In general, a strategy profile forms an equilibrium if no player can benefit by switching strategies, given that every player sticks with the same strategy.
+
+A Nash equilibrium is a strategy profile in which no player can benefit by switching strategies, given that the other's players remain unchanged. Pure strategy is a deterministic policy, and will NOT always mean it is the best. Instead, they want to maximize their own utility.
+
+\vspace{5mm}
+
+\noindent b) Does Player A have a strictly dominant strategy? If yes, state what it is. If no, explain 
+why not. \textbf{[2 points]}
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 1 b)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+Yes. S1 is the strictly dominant strategy for player A. 
+
+For player A, choosing strategy S1 would give them the highest payoffs. S1 strictly dominates S2 because S1 would always give a better outcome than choosing S2 (no matter what the other player does). S1 also strictly dominates S3 since S1 will again give the better outcome.
+
+\vspace{5mm}
+
+\noindent c) Does Player B have a strictly dominant strategy? If yes, state what it is. If no, explain 
+why not.\textbf{ [2 points] }
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 1 c)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+No, player B does not have a strictly dominant strategy. 
+
+Player B has a weakly dominant strategy. For player B, S1 is weakly dominated by S3. The one difference is that in S1, there is an outcome that gives B=9 instead of B=6. Other than that, the rest of S1 and S3's results are similar, e.g. B=-4, B=0
+
+\vspace{5mm}
+
+\noindent d) What is the Pareto optimal outcome in this game? \textbf{[2 points]} 
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 1 d)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+The Pareto optimal outcome in this game is (S1, S1).
+
+A Pareto optimal outcome is one where there is no other outcome that all players would prefer.
+
+
+\vspace{5mm}
+
+\noindent e) Is this a zero-sum game? \textbf{[2 points] }
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 1 e)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+This game is not zero-sum. 
+
+Zero-sum games are defined as games where the total payoff to all players is the same for every instance of the game. Zero-sum games are also games in which the sum of the payoffs is always zero.
+
+There are some outcomes where the payoffs between the players are no longer zero, for instance, (S1, S1), (S1, S2), (S1, S3), and (S2, S3). These outcomes favor B. 
+
+
+
+\vspace{10mm}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%
+% Problem 2
+%%%%%%%%%%%%%%%%%%%%
+
+\noindent 2.  Consider the game represented in normal form below. 
+
+\vspace{3mm}
+
+
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+       & B: S1 & B: S2 \\ 
+       \hline
+        A: S1  & A = 2, B = -2 & A = -5, B = 5\\ 
+        \hline
+        A: S2 & A = -3, B = 3 & A = 4, B = -4 \\
+        \hline
+    \end{tabular}
+\end{table*}
+
+\vspace{5mm}
+
+\noindent a) Calculate the mixed strategy Nash equilibrium for this game. Clearly indicate the 
+probability associated with each strategy for each player. \textbf{[10 points] }
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 2 a)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+A mixed strategy is a randomized policy, based on selecting a strategy based on a probability distribution.
+
+\textbf{\underline{Mixed strategy for A:}}
+
+[S1: q, S2: 1-q]\\
+
+[S1: $\frac{1}{2}$, S2: $\frac{1}{2}$]\\
+
+
+\textbf{B's payoff for S1?}
+\begin{align}
+-2q + 3(1-q) = -2q + 3 - 3q = -5q + 3
+\end{align}
+
+
+
+\textbf{B's payoff for S2?}
+\begin{align}
+5q - 4(1-q) = 5q - 4 + 4q = 9q - 4
+\end{align}
+
+
+\textbf{Set equal and solve for q:}
+\begin{align}
+-5q + 3 &= 9q - 4\\
+7 &= 14q\\
+q &= \frac{1}{2}
+\end{align}
+
+
+
+\textbf{\underline{Mixed strategy for B:}}
+
+[S1: p, S2: 1-p]\\
+
+[S1: $\frac{9}{14}$, S2: $\frac{5}{14}$]\\
+
+\textbf{Suppose A: S1}
+\begin{align}
+2p - 5(1-p) = 2p - 5 + 5p = 7p - 5
+\end{align}
+
+
+\textbf{Suppose A: S2}
+\begin{align}
+-3p + 4(1-p) = -3p + 4 - 4p = -7p + 4
+\end{align}
+
+\textbf{Set equal and solve for p:}
+\begin{align}
+7p - 5 &= -7p + 4\\
+14p &= 9\\
+p &= \frac{9}{14}
+\end{align}
+
+\vspace{5mm}
+
+\noindent b)  Calculate the expected payoffs for each player at the mixed strategy Nash equilibrium 
+you calculated. \textbf{[5 points]}
+
+\vspace{3mm}
+
+\noindent \textbf{ANSWER:}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your answer to 2 b)
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+Player B:
+Computed expected payoff for B:
+\begin{align}
+9(\frac{1}{2}) - 4 &= \frac{1}{2}
+\end{align}
+
+Player A:
+Computed expected payoff for A:
+\begin{align}
+7(\frac{9}{14}) - 5 &= -\frac{1}{2}	
+\end{align}
+
+
+
+
+
+
+
+\end{document}
